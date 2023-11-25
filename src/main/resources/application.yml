@@ -1,0 +1,12 @@
+server:
+  port: 8091
+
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+    hibernate.ddl-auto: update
+  datasource:
+    url: jdbc:sqlserver://${DATABASE_URL:localhost:1433};DatabaseName=${DATABASE_SCHEMA:SYNPULSE_USER_DB};trustServerCertificate=true
+    username: ${DATABASE_USER:sa}
+    password: ${DATABASE_PASSWORD:Demo9731}
