@@ -41,8 +41,11 @@ public class GlobalExceptionHandler {
 
         if(error.getErrorType().getErrorLevel().equals(GlobalErrorLevel.HEIGH)) {
             log.error(error.getMessage());
-            //TODO save to DB
+            //Consider to send error message to MQ
         }
+
+        log.info("User-Service Exception Code: " + error.getErrorType().getErrorCode());
+        log.info("User-Service Exception Message: " + error.getMessage());
 
         return ResponseEntity.status(HttpStatus.BAD_REQUEST)
                 .body(new ResponseErrorDto(HttpStatus.BAD_REQUEST, error.getErrorType().getErrorCode(), error.getMessage()));

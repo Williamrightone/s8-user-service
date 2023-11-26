@@ -15,7 +15,7 @@ class EndUserTest {
     private PasswordEncoder passwordEncoder;
 
     @Test
-    public void test_passwd_encode_api_match() {
+    void test_passwd_encode_api_match() {
         String passwd_a = passwordEncoder.encode("Demo9731");
         String passwd_b = passwordEncoder.encode("Demo9732");
 

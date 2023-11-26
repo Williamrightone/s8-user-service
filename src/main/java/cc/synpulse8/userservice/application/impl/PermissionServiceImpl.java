@@ -1,6 +1,5 @@
 package cc.synpulse8.userservice.application.impl;
 
-import cc.synpulse8.userservice.application.EndUserService;
 import cc.synpulse8.userservice.application.PermissionService;
 import cc.synpulse8.userservice.domain.service.EndUserLoginService;
 import cc.synpulse8.userservice.presentation.rest.RestfulResponse;
@@ -18,6 +17,6 @@ public class PermissionServiceImpl implements PermissionService {
 
     @Override
     public RestfulResponse<List<String>> getPermissionListBySid(String sid) {
-        return new RestfulResponse<List<String>>(endUserLoginService.getPermissionListBySid(sid));
+        return new RestfulResponse<>(endUserLoginService.getPermissionListBySid(sid));
     }
 }
