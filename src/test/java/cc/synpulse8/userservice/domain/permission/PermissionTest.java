@@ -22,8 +22,8 @@ class PermissionTest {
 
         List<String> permissions = permissionRepository.findPermissionBySid(sid);
 
-        assertEquals(permissions.size(), 1);
-        assertEquals(permissions.get(0), "ACCOUNTING_VIEW");
+        assertEquals(1, permissions.size());
+        assertEquals("ACCOUNTING_VIEW", permissions.get(0));
 
     }
 
